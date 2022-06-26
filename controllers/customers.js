@@ -36,7 +36,7 @@ function update(req, res) {
     {new: true},
     function(err, customer) {
       if (err || !customer) return res.redirect('/customers');
-      res.redirect(`/customers}`);
+      res.redirect(`/customers`);
     }
   );
 }
