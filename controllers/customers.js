@@ -5,8 +5,8 @@ function newStudent(req, res) {
 }
 
 function index(req, res) {
-  Customer.find({}, function(err, students) {
-    res.render('customers/index', { title: 'All Students', students });
+  Customer.find({}, function(err, customers) {
+    res.render('customers/index', { title: 'All Customers', customers });
   });
 }
 function create(req, res){

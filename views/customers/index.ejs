@@ -30,16 +30,16 @@
             <th scope="col">Action</th>
         </thead>
         <tbody>
-        <% students.forEach(student => { %>
+        <% customers.forEach(customer => { %>
             <tr>
-                <td><%= student.fname %></td>
-                <td><%= student.lname %></td>
-                <td><%= student.phone %></td>
-                <td><%= student.emailid %></td>
-                <td><%= student.consent %></td>
+                <td><%= customer.fname %></td>
+                <td><%= customer.lname %></td>
+                <td><%= customer.phone %></td>
+                <td><%= customer.emailid %></td>
+                <td><%= customer.consent %></td>
                 <td>
-                    <a href="/customers/edit/<%= student._id %>" class="btn btn-outline-primary btn-sm" role="button">UPDATE</a>
-                    <a href="/customers/delete/<%= student._id %>" class="btn btn-outline-danger btn-sm" role="button">DELETE</a>        
+                    <a href="/customers/edit/<%= customer._id %>" class="btn btn-outline-primary btn-sm" role="button">UPDATE</a>
+                    <a href="/customers/delete/<%= customer._id %>" class="btn btn-outline-danger btn-sm" role="button">DELETE</a>        
                 </td>
             </tr>
         <% }) %>
