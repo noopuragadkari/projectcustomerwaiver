@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const customerSchema = new Schema({
-  fname: {
+  first: {
     type: String,
     required: true
   },
-  lname: {
+  last: {
     type: String,
     required: true
   },
@@ -14,7 +14,7 @@ const customerSchema = new Schema({
     type: Number,
     required: true
   },
-  emailid: {
+  email: {
     type:String
 },
 consent:{

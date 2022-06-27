@@ -1,7 +1,7 @@
 const Customer = require('../models/customer');
 
-function newStudent(req, res) {
-  res.render('customers/new', { title: 'Add Student' });
+function newCustomer(req, res) {
+  res.render('customers/new', { title: 'Add Customer' });
 }
 
 function index(req, res) {
@@ -50,7 +50,7 @@ function deleteCustomer(req, res) {
 
 
 module.exports = {
-  new: newStudent,
+  new: newCustomer,
   create,
   index,
   edit,

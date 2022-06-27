@@ -32,10 +32,10 @@
         <tbody>
         <% customers.forEach(customer => { %>
             <tr>
-                <td><%= customer.fname %></td>
-                <td><%= customer.lname %></td>
+                <td><%= customer.first %></td>
+                <td><%= customer.last %></td>
                 <td><%= customer.phone %></td>
-                <td><%= customer.emailid %></td>
+                <td><%= customer.email %></td>
                 <td><%= customer.consent %></td>
                 <td>
                     <a href="/customers/edit/<%= customer._id %>" class="btn btn-outline-primary btn-sm" role="button">UPDATE</a>
