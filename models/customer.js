@@ -18,7 +18,12 @@ const customerSchema = new Schema({
     type:String
 },
 consent:{
-  type: String
+  type: String,
+  required: true
+},
+waiver:{
+  type: String,
+  required: true
 },
 }, {
   timestamps: true

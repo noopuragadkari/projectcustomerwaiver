@@ -32,6 +32,16 @@
           <input type="name" class="form-control" name="email"  value="<%= customer.email %>" placeholder="Enter Email Id" required>
         </div>
       </div>
+      <div class="row marginTop">
+        <div class="col-6">
+          <select class="form-select"  name="waiver"  required>
+            <option selected><%= customer.waiver %></option>
+            <option value="Spa">Spa</option>
+            <option value="Golf">Golf</option>
+            <option value="Casino">Casino</option>
+          </select>
+        </div>
+      </div>
       <div class="col-6 marginTop">
         <button type="submit" class="btn btn-primary">UPDATE CUSTOMER INFO</button>
     </div>
