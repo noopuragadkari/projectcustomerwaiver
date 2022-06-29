@@ -20,6 +20,11 @@
         </div>
     </nav>
     <h1 class="h1Index">CUSTOMER DETAILS</h1>
+    <% if (message.length > 0) { %>
+      <div class="alert alert-success" role="alert">
+        <%= message %>
+      </div>
+      <% } %>
     <table class="table table-striped marginTop">
         <thead class="thead-dark">
             <th scope="col">Waiver</th>

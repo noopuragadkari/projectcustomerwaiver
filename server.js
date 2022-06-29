@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var flash = require('connect-flash');
 
 var methodOverride = require('method-override');
 
@@ -33,6 +34,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+app.use(flash());
 
 app.use(function (req, res, next) {
   res.locals.user = req.user;

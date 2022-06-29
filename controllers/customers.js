@@ -1,12 +1,12 @@
 const Customer = require('../models/customer');
 
 function newCustomer(req, res) {
-  res.render('customers/new', { title: 'Add Customer' });
+  res.render('customers/new', { title: 'Add Customer',message : req.flash('message') });
 }
 
 function index(req, res) {
   Customer.find({}, function(err, customers) {
-    res.render('customers/index', { title: 'All Customers', customers });
+    res.render('customers/index', { title: 'All Customers', customers, message : req.flash('message') });
   });
 }
 function create(req, res){
@@ -14,11 +14,18 @@ function create(req, res){
   const  customer = new Customer(req.body);
   // we save the customer object to the db
   customer.save(function (error){
-      if(error) return res.render('customers/new');
+     // if(error) return res.render('customers/new');
+    //  console.log(customer);
+     // req.flash('message','saved...');
+     // res.redirect(`/customers`);
+     if(!error){
       console.log(customer);
-      // if we save the customer object then return the user
-      // to the index page
+      req.flash('message','Customer Added successfully!');
       res.redirect(`/customers`);
+     }
+     else{
+      res.send(error.message);
+     }
   });
 }
 function edit(req, res) {
