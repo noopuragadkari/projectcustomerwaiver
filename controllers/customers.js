@@ -9,6 +9,11 @@ function index(req, res) {
     res.render('customers/index', { title: 'All Customers', customers, message : req.flash('message') });
   });
 }
+function show(req, res) {
+  Customer.findById(req.params.id, function(err, customer) {
+    res.render('customers/show', { title: 'Customer Details', customer });
+  });
+}
 function create(req, res){
   // we create the customer object
   const  customer = new Customer(req.body);
@@ -31,7 +36,7 @@ function create(req, res){
 function edit(req, res) {
   Customer.findOne({_id: req.params.id}, function(err, customer) {
     if (err || !customer) return res.redirect('/customers');
-    res.render('customers/edit', {customer});
+    res.render('customers/edit', {customer,message : req.flash('message')});
   });
 }
 function update(req, res) {
@@ -43,6 +48,7 @@ function update(req, res) {
     {new: true},
     function(err, customer) {
       if (err || !customer) return res.redirect('/customers');
+      req.flash('message','Record updated!');
       res.redirect(`/customers`);
     }
   );
@@ -60,6 +66,7 @@ module.exports = {
   new: newCustomer,
   create,
   index,
+  show,
   edit,
   update,
   delete: deleteCustomer 

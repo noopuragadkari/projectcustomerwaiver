@@ -4,6 +4,7 @@ const customersCtrl = require('../controllers/customers');
 
 router.get('/', customersCtrl.index);
 router.get('/new', customersCtrl.new);
+router.get('/:id', customersCtrl.show);
 router.post('/', customersCtrl.create);
 router.get('/edit/:id', customersCtrl.edit);
 router.put('/:id', customersCtrl.update);

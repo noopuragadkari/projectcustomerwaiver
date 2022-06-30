@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -34,6 +35,7 @@
             <th scope="col">Email ID</th>
             <th scope="col">Consent</th>
             <th scope="col">Created At</th>
+            <th scope="col">Student Details</th>
             <th scope="col">Action</th>
         </thead>
         <tbody>
@@ -46,9 +48,10 @@
                 <td><%= customer.email %></td>
                 <td><%= customer.consent %></td>
                 <td><%= customer.createdAt %></td>
+                <td><a href="/customers/<%= customer._id %>" class="btn btn-outline-primary btn-sm" role="button">DETAILS</a></td>
                 <td>
-                    <a href="/customers/edit/<%= customer._id %>" class="btn btn-outline-primary btn-sm" role="button">UPDATE</a>
-                    <a href="/customers/delete/<%= customer._id %>" class="btn btn-outline-danger btn-sm" role="button">DELETE</a>        
+                    <a href="/customers/edit/<%= customer._id %>"  class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                    <a href="/customers/delete/<%= customer._id %>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                 </td>
             </tr>
         <% }) %>
