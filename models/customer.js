@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+//Create a noteSchema
+const noteSchema = new Schema({
+  notes: String
+}, {
+  timestamps: true
+});
+
 const customerSchema = new Schema({
   first: {
     type: String,
@@ -25,6 +32,7 @@ waiver:{
   type: String,
   required: true
 },
+notes: [noteSchema]
 }, {
   timestamps: true
 });

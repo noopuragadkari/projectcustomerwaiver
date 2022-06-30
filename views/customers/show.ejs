@@ -39,4 +39,38 @@
             <dd class="col-sm-9"><%= customer.email %></dd>
         </div>
     </section>
+    <section class="marginTop">
+        <form method="POST"
+    action="/customers/<%= customer._id %>/note">
+            <div class="col-6 form-group">
+                <label class="form-label">Note</label>
+                <textarea class="form-control" name="notes" rows="4" cols="50" placeholder="Add note"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-6 marginTop">
+                    <button type="submit" class="btn btn-primary">ADD NOTE</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <section class="marginTop">
+        <table class="table">
+            <thead class="thead-dark">
+                <th>Notes</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <% customer.notes.forEach(function(r) { %>
+                    <tr>
+                        <td><%= r.notes %></td>
+                        <td>
+                            <form action="/notes/<%= r._id %>?_method=DELETE" method="POST">
+                               <button class="btn btn-outline-danger btn-sm" type="submit">DELETE</button>
+                            </form>
+                          </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </section>
 </body>
