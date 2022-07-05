@@ -3,7 +3,6 @@ const Customer = require('../models/customer');
 function newCustomer(req, res) {
   res.render('customers/new', { title: 'Add Customer',message : req.flash('message') });
 }
-
 function index(req, res) {
   Customer.find({}, function(err, customers) {
     res.render('customers/index', { title: 'All Customers', customers, message : req.flash('message') });
@@ -56,6 +55,7 @@ function update(req, res) {
 function deleteCustomer(req, res) {
   Customer.findOneAndDelete(
     {_id: req.params.id}, function(err) {
+      req.flash('message','Record deleted!');
       res.redirect('/customers');
     }
   );

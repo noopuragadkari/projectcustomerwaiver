@@ -20,12 +20,12 @@
             </ul>
         </div>
     </nav>
-    <h1 class="h1Index">CUSTOMER DETAILS</h1>
     <% if (message.length > 0) { %>
-      <div class="alert alert-success" role="alert">
+      <div class="alert alert-success marginTop" role="alert">
         <%= message %>
       </div>
-      <% } %>
+    <% } %>
+    <h1 class="h1Index">CUSTOMER DETAILS</h1>
     <table class="table table-striped marginTop">
         <thead class="thead-dark">
             <th scope="col">Waiver</th>
@@ -49,7 +49,7 @@
                 <td><%= customer.consent %></td>
                 <td><%= customer.createdAt %></td>
                 <td><a href="/customers/<%= customer._id %>" class="btn btn-outline-primary btn-sm" role="button">DETAILS</a></td>
-                <td>
+                <td style="display: flex;">
                     <a href="/customers/edit/<%= customer._id %>"  class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                     <a href="/customers/delete/<%= customer._id %>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                 </td>
@@ -57,7 +57,7 @@
         <% }) %>
         </tbody>
     </table>
-    <nav aria-label="Page navigation example">
+    <!-- <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item">
             <a class="page-link" href="#" aria-label="Previous">
@@ -75,6 +75,6 @@
             </a>
           </li>
         </ul>
-      </nav>
+      </nav> -->
     </body>
 </html>
